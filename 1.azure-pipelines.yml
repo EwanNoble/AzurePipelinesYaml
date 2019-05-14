@@ -7,7 +7,7 @@ stages:
         continueOnError: true
         steps:
           - script: echo my first build job
-  - stage: Deploy
+  - stage: Deploy dev
     jobs:
       # track deployments on the environment
       - deployment: DeployWeb
@@ -32,6 +32,8 @@ stages:
             deploy:
               steps:
                 - script: echo my first deployment
+  - stage: Deploy staging
+    jobs:
       - deployment: DeployWeb
         pool:
           vmImage: "Ubuntu-16.04"
