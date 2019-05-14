@@ -7,7 +7,7 @@ stages:
         continueOnError: true
         steps:
           - script: echo my first build job
-  - stage: Deploy dev
+  - stage: "DeployDev"
     jobs:
       # track deployments on the environment
       - deployment: DeployWeb
@@ -32,7 +32,7 @@ stages:
             deploy:
               steps:
                 - script: echo my first deployment
-  - stage: Deploy staging
+  - stage: "DeployStaging"
     jobs:
       - deployment: DeployWeb
         pool:
