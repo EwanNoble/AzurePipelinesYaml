@@ -8,6 +8,7 @@ stages:
         steps:
           - script: echo my first build job
   - stage: "DeployDev"
+    dependsOn: []
     jobs:
       # track deployments on the environment
       - deployment: DeployWeb
@@ -33,6 +34,7 @@ stages:
               steps:
                 - script: echo my first deployment
   - stage: "DeployStaging"
+    dependsOn: []
     jobs:
       - deployment: DeployWeb
         pool:
